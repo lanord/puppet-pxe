@@ -1,4 +1,5 @@
 # * file: which file to write to
+# * default_timeout: Timeout before timeout to default menu option
 # * template: to use for the menu
 
 # Here we want to setup a new menu file, but we also want to be able to get to
@@ -8,10 +9,11 @@
 
 define pxe::menu (
   $file,
-  $back     = 'Main Menu',
-  $append   = 'pxelinux.cfg/default',
-  $template = 'pxe/menu.erb',
-  $root     = 'default',
+  $back            = 'Main Menu',
+  $append          = 'pxelinux.cfg/default',
+  $default_timeout = '50',
+  $template        = 'pxe/menu.erb',
+  $root            = 'default',
 ) {
 
   include concat::setup
@@ -44,3 +46,4 @@ define pxe::menu (
     }
   }
 }
+
