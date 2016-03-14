@@ -17,5 +17,6 @@ class pxe::tools {
   }
 
   # Bring in some tools
+  include pxe::tools::liveqa
   include pxe::tools::memtest
 }
